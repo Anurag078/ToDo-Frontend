@@ -1,0 +1,58 @@
+<div
+  class="bg-wrapper"
+  style="
+    background: url('/assets/ab.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: auto;
+  "
+>
+  <div class="main" style="background-color: rgba(240, 243, 245, 0.911); padding: 30px; border-radius: 10px; margin-top: 50px;">
+    <div class="container mt-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Welcome to your Dashboard</h3>
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+      </div>
+
+      <div class="search-text mb-3">
+        <input type="text" class="form-control" (keyup)="searchText($event)" [(ngModel)]="sText" placeholder="Search text" />
+      </div>
+
+      <div>
+        <button class="btn btn-primary mb-3" routerLink="/add-task">Add Task</button>
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th style="width: 20%;">Title</th>
+                <th style="width: 40%;">Description</th>
+                <th style="width: 20%;">Status</th>
+                <th style="width: 20%;">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of tasks">
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.completed ? 'Completed' : 'Incomplete' }}</td>
+                <td *ngIf="task?.user?.id.toString() === userId.toString()">
+                  <div class="button-container">
+                    <button class="btn btn-danger btn-sm" (click)="deleteTask(task.id)">Delete</button>
+                    <button class="btn btn-danger btn-sm" (click)="updateTask(task.id)">Update</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

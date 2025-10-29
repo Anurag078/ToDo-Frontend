@@ -1,0 +1,150 @@
+/* General background styling for the page */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Main dashboard container */
+.main {
+  padding-top: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section with title and logout button */
+.container h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Button styles */
+.btn {
+  border-radius: 5px;
+}
+
+/* Logout button */
+.btn-danger {
+  font-weight: bold;
+}
+
+/* Search text input field */
+.search-text input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f1f3f5;
+}
+
+/* Button for adding tasks */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  text-align: center;
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Flex container for Delete and Update buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Delete button styling */
+.btn-danger.btn-sm {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger.btn-sm:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+/* Space between delete and update buttons */
+button {
+  margin-right: 0.5rem; /* Adds space between buttons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .search-text input {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  .table th, .table td {
+    padding: 0.5rem;
+  }
+
+  .btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,108 @@
+/* Wrapper */
+.register-wrapper {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image as background */
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(5px) brightness(0.8);
+}
+
+/* Register card styling */
+.register-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  color: white;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Button */
+.register-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00b4d8;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  background-color: #0096c7;
+}
+
+/* Link */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.login-link a {
+  color: #90e0ef;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    padding: 30px 20px;
+  }
+}
