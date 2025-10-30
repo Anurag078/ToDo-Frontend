@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private baseUrl = `http://localhost:8080/api/users`;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   register(user: any) {
     return this.http.post(`${this.baseUrl}/register`, user);
@@ -17,16 +20,19 @@ export class AuthService {
   login(credentials: any) {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }
-  clearStorage():void{
-    localStorage.clear();
-  }
-  isUserLoggedIn():boolean{
-    let isAuth=false;
-    if (typeof localStorage !== 'undefined') {
-    const id=localStorage.getItem("id");
-    isAuth= id!==null ?true:false;
 
+  clearStorage(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.clear();
+    }
   }
-  return isAuth;
-}
+
+  isUserLoggedIn(): boolean {
+    let isAuth = false;
+    if (isPlatformBrowser(this.platformId)) {
+      const id = localStorage.getItem("id");
+      isAuth = id !== null;
+    }
+    return isAuth;
+  }
 }

@@ -1,13 +1,16 @@
 {
   "name": "todo-frontend",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:todo-frontend": "node dist/todo-frontend/server/server.mjs"
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+},
+
+  "engines": {
+  "node": "18.x"
   },
   "private": true,
   "dependencies": {
